@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Expense Tracker</title>
+</head>
+<body>
+    <div>
+        <div class="box" id="heading">
+            <h1>Kharcha of <%= currDate %></h1>
+        </div>
+       <div class="box">
+            <% for( let i = 0; i < kharcha.length; i++ ) { %>
+                <div class="item">
+                    <input type="checkbox">
+                    <p> <%= kharcha[i] %> on <%= jagah[i] %> at <%= currTimes[i] %> </p>
+                </div>
+            <% } %>
+            <form class="item" action="/" method="post">
+                <input type="text" name="kharcha" placeholder="Kitta Kiya?" autocomplete="off" autofocus>
+                <input type="text" name="jagah" placeholder="Kaha Kiya?" autocomplete="off">
+                <button onclick="alertTxt()" type="submit">+</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
