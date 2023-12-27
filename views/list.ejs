@@ -12,12 +12,14 @@
             <h1>Kharcha of <%= currDate %></h1>
         </div>
        <div class="box">
-            <% for( let i = 0; i < kharcha.length; i++ ) { %>
-                <div class="item">
-                    <input type="checkbox">
-                    <p> <%= kharcha[i] %> on <%= jagah[i] %> at <%= currTimes[i] %> </p>
-                </div>
-            <% } %>
+            <% kharcha.forEach(khar => { %>
+                <form action="/delete" method="post">
+                    <div class="item">
+                        <input type="checkbox" name="checkbox" value="<%= khar._id %>" onChange="this.form.submit()">
+                        <p> <%= khar.expense %> on <%= khar.place %> at <%= khar.time %> </p>
+                    </div>
+                </form>
+            <% }) %>
             <form class="item" action="/" method="post">
                 <input type="text" name="kharcha" placeholder="Kitta Kiya?" autocomplete="off" autofocus>
                 <input type="text" name="jagah" placeholder="Kaha Kiya?" autocomplete="off">
