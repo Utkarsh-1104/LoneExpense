@@ -41,10 +41,7 @@ async function main() {
         await intro.save()
         res.redirect("/")
     } else {
-        res.render("list", {
-          currDate: date,
-          kharcha: items,
-        });
+        res.render("list", {currDate: date, kharcha: items} );
     }
   });
 
